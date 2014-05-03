@@ -1,0 +1,278 @@
+body { 						background-color: 55aa55;   				}
+            
+div.container {             position: relative;
+                            width: 911;
+                            height: 719;
+                            border-color: 000000;
+                            border-style: solid;
+                            border-width: 1;
+                            margin-left: auto;
+                            margin-right: auto;
+                            margin-top: 15px;                           }
+            
+div.main { 					position: absolute;
+                            top: 0;
+                            left: 0;
+                            background-color: ffffff;
+							padding: 8px;
+                            width: 895;
+                            text-align: middle;                         }
+                            
+div.promptLayer {           position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 911;
+                            height: 719;
+                            background-color: rgba(0, 0, 0, .5);        }
+
+.promptLayer.hide {         visibility: hidden;
+                            opacity: 0;
+                            transition: visibility 1s linear,
+                                        opacity 1s linear;              }
+
+td {                        font-family: verdana, helvetica, arial;     }
+
+div {                       font-family: verdana, helvetica, arial;     }
+                            
+td.main {                   border-style: solid;
+                            border-width: 1;
+                            border-color: 000000;                       }
+                            
+td.board {                  cursor: -webkit-grab;
+                                cursor: -moz-grab grab;                 }                                
+                            
+td.board.mouseDown {        cursor: -webkit-grabbing;
+                                cursor: -moz-grabbing;                  }
+
+td.sidePanel {              padding: 12px;
+                            line-height: 1.7;
+                            font-family: verdana, helvetica, arial;
+                            font-size: 10pt;                            }
+                            
+td.title {                  font-size: 24pt;
+                            height: 48;
+                            text-align: center;                         }
+
+td.chat {                   height: 115;                                }
+                            
+td.hfiller {                width: 50;
+                            font-size: 1pt;                             }
+                            
+td.vfiller {                height: 2;
+                            font-size: 1pt;                             }
+
+div.prompt {                font-family: verdana, helvetica, arial;
+                            font-size: 12pt;
+                            line-height: 1.75;
+                            background-color: aaffaa;
+                            position: absolute;
+                            border-style: solid;
+                            border-width: 1;
+                            border-color: 000000;}
+
+div.handlePrompt {          height: 250;
+                            width: 450;
+                            font-size: 11pt;
+                            text-align: center;
+                            line-height: 2.25;
+                            background-color: aaffaa;
+                            top: 200;
+                            left: 231;
+                            right: 231;
+                            position: absolute;
+							border-style:solid;
+							border-width: 2;
+							border-color: 000000;
+                            opacity: 0;
+                            transition: opacity 1.5s linear;            }
+                            
+.handlePrompt.show {        opacity: 1;
+                            transition: opacity 1.5s linear;            }
+
+
+a { 						text-decoration: none;
+							color: 000000;								}
+a:hover { 					color: ffaa66;								}
+
+textarea.chat { 			width: 546;
+							height: 95;
+							resize: none;
+							background-color: ffffff;
+							font-family: verdana, helvetica, arial;
+							font-size: 9pt;
+							border-style: solid;
+							border-width: 1;
+							border-color: 000000;						}
+					
+input.chat { 				background-color: ffffff;
+							height: 20;
+							width:546;
+							font-family: verdana, helvetica, arial;
+							font-size: 9pt;
+							padding-left: 2px;
+							border-style: solid;
+							border-width: 1;
+                            border-top-width: 0;
+							border-color: 000000; 						}
+					
+button.prompt { 			height: 32;
+							width: 100;
+							background-color: 77dd77; 
+							font-family: verdana, helvetica, arial;
+							font-size: 12pt;
+							margin-left: 2px;
+							border-style:solid;
+							border-width: 1;
+							border-color: 000000;   					}
+                            
+button.prompt:hover {       background-color: ffaa66;
+                            border-color: aa7733;						}
+			
+select.chess {              width: 215;
+                            height: 30;
+                            font-family: verdana, helvetica, arial;
+                            font-size: 10pt;
+                            background-color: ffffff;
+                            border-style: solid;
+                            border-width: 1;
+                            border-color: 000000;
+                            padding-left: 5px;                          }
+                            
+button.chessMenu {          width: 50;
+                            height: 30; border-style: solid;
+                            border-width: 1;
+                            border-color: 000000;
+                            margin-bottom: 5px;
+                            font-family: verdana, helvetica, arial;
+                            font-size: 10pt;
+                            background-color: ffffff;                   }
+                                       
+button.chessMenu:hover {    background-color: ffaa66;
+							border-color: aa7733;						}
+
+                            
+iframe.chess {              border-style: solid;
+                            border-width: 1;
+                            border-color: 000000;
+                            padding: 0px;
+                            width: 262;                                 
+                            height: 332;                                }
+                                                        
+div.chessFront {            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 880;
+                            height: 552;                                }
+                                                            
+
+                                                            
+                            
+input.chess {               background-color: 77dd77; 
+							font-family: verdana, helvetica, arial;
+							font-size: 12pt;
+							margin: 8px;
+							border-style:solid;
+							border-width: 1;
+							border-color: 000000;}
+                            
+button.chessNav {           background-color: ffffff;
+                            border-style: none;
+                            border-width: 0;
+                            cursor: default;
+                            width: 67;
+                            height: 25;
+                            margin-left: 0px;
+                            margin-right: 0px;                          }
+                            
+button.chessNav:hover {     background-color: aaffaa;                   }
+
+div.timeFront {             width: 270;
+                            height: 100;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            background-color: ffffff;
+                            text-align: center;
+                            -webkit-transform: rotateY(0deg);
+                                -moz-transform: rotateY(0deg);
+                                -transform: rotateY(0deg);
+                            -webkit-perspective: 600;
+                                 -moz-perspective: 600;
+                                 -perspective: 600;
+                            -webkit-backface-visibility: hidden;
+                                -moz-backface-visibility: hidden;
+                                -backface-visibility: hidden;
+                            -webkit-transition: all .5s ease-in-out;
+                                -moz-transition: all .5s ease-in-out;
+                                -transition: all .5s ease-in-out;       }
+                                
+.timeFront.flip {           -webkit-transform: rotateY(180deg);         }
+
+div.timeBack {              width: 270;
+                            height: 100;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            background-color: ffffff;
+                            text-align: center;
+                            -webkit-transform: rotateY(180deg);
+                                -moz-transform: rotateY(180deg);
+                                -transform: rotateY(180deg);
+                            -webkit-perspective: 600;
+                                 -moz-perspective: 600;
+                                 -perspective: 600;
+                            -webkit-backface-visibility: hidden;
+                                -moz-backface-visibility: hidden;
+                                -backface-visibility: hidden;
+                            -webkit-transition: all .5s ease-in-out;
+                                -moz-transition: all .5s ease-in-out;
+                                -transition: all .5s ease-in-out;       }
+                                
+.timeBack.flip {            -webkit-transform: rotateY(0deg);           }
+
+                            
+div.time {                  width: 270;
+                            height: 100;
+                            background-color: ffffff;
+                            position: relative;
+                            padding: 0px;
+                            margin: 0px;                                }
+                            
+input.time {                width: 240;
+                            height: 90;
+                            margin: 5px;
+                            font-family:    droid sans mono, monaco,
+                                            andele mono, courier new,
+                                            courier;
+                            text-align: center;
+                            font-size: 38pt;
+                            border-style: none;
+                            border-width: 0;                            }
+                            
+.time.black {               background-color: 004000;
+                            color: aaffaa;                              }
+                            
+.time.white {               background-color: ccffcc;
+                            color: 006600;                              }
+                            
+div.navContainer {          font-size: 0pt;                             }
+
+button.chessNavBack {       background-color: ffffff;
+                            border-style: none;
+                            border-width: 0;
+                            cursor: default;
+                            width: 90;
+                            height: 25;
+                            margin-bottom: 1px;}
+                            
+.chessNavBack:hover {       background-color: aaffaa;                   }
+
+div.username {              font-family: verdana, helvetica, arial;
+                            font-size: 9pt;
+                            position: absolute;                         }
+                            
+.username.black {           background-color: transparent;
+                            color: aaffaa;                              }
+
+.username.white {           background-color: transparent;
+                            color: 006600;                              }

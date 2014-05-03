@@ -1,0 +1,126 @@
+<html>
+<head>
+    <!-- danode chess, by dan sparks -->
+    <title>danode chess</title>
+
+    <script src =   "js/jquery-1.11.0.min.js"   ></script>      <!-- jquery -->
+    <script src =   "/socket.io/socket.io.js"   ></script>      <!-- client side support for socket.io -->
+    <script src =   "js/chessclient.js"         ></script>      <!-- main chess-playing client side code -->
+    <script src =   "js/movegen.js"             ></script>      <!-- move generation function -->
+    <script src =   "js/movelist.js"            ></script>      <!-- manipulation of visual movelist -->
+    <script src =   "js/chessui.js"             ></script>      <!-- user interaction / drag-drop stuff /etc -->
+    <script src =   "js/chessio.js"             ></script>      <!-- server/client input/output stuff (using socket.io, etc) -->
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+	
+	<div class="container">
+
+        <div class="main">
+                <table width="874" cellpadding="0" cellspacing="10">
+                <tr>
+                    <td class="main board" rowspan="3">
+                    
+                        <!-- Chessboard -->
+                        <script>var size = 548; var lightColor = "ffffef"; darkColor = "88dd88"; var interactive = true;</script>
+                        <script src="js/createboard.js"></script>
+                    
+                    </td>
+                    <td class="hfiller">&nbsp;</td>
+                    <td class="main title">
+                    
+                        <!-- App title -->
+                        <font color='55aa55'>danode</font>chess
+                    
+                    </td>
+                </tr>
+                <tr>
+                    <td class="hfiller vfiller">&nbsp;</td>
+                    <td class="vfiller">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="hfiller">&nbsp;</td>
+                    <td class="main sidePanel" valign="top" rowspan="3">
+                    
+                        <!-- Side-panel -->
+                        <div class="time">
+                            <div id="fTimeTopFront" class="timeFront">
+                                <select class="chess" id="pgn"><option value="null">load pgn file</option></select>
+                                <button class="chessMenu" onclick="loadpgn()">go</button><br>
+                                <select class="chess" id="userList"><option value="null">challenge player</option></select>
+                                <button class="chessMenu" onclick="challenge()">go</button><br><br>
+                            </div>
+                            <div id="fTimeTopBack" class="timeBack">
+                                <div class="username" id="oppNameBox" style="top: 2; left: 19;"></div>
+                                <input class="time" id="oppTime" value="0:05:00" readonly>
+                            </div>
+                        </div>
+                    
+                        movelist:<br>
+                        <iframe class="chess" id="movelist" onclick="alert('asdf');"></iframe>
+                        
+                        <div class="time" style="height: 130;">
+                            <div id="fTimeBottomFront" class="timeFront">
+                                <div class="navContainer">
+                                    <button class="chessNav" style="width: 68;" onclick="goToMove(0);"><<</button>
+                                    <button class="chessNav" onclick="goToMove(history.moveNum - 1);"><</button>
+                                    <button class="chessNav" onclick="goToMove(history.moveNum + 1);">></button>
+                                    <button class="chessNav" style="width: 68;" onclick="goToMove(history.totalMoves);">>></button>
+                                </div>
+                            </div>
+                            <div id="fTimeBottomBack" class="timeBack">
+                                <div class="navContainer">
+                                    <button class="chessNavBack" onclick="resign();">resign</button>
+                                    <button class="chessNavBack" onclick="requestUndo();">undo</button>
+                                    <button class="chessNavBack" onclick="offerDraw();">draw</button>
+                                    <div class="username" id="myNameBox" style="top: 29; left: 19;"></div>
+                                    <input class="time" id="myTime" value="0:05:00" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="vfiller">&nbsp;</td>
+                    <td class="vfiller hfiller">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="chat">
+                        
+                        <!-- The chat area -->
+                        <textarea class="chat" id="chatBox" readonly></textarea><br>
+                        <input class="chat" id="outBox">
+                    </td>
+                    <td class="hfiller"></td>
+                </tr>
+                </table>
+            </div>
+            <div class="promptLayer">
+                <div class="handlePrompt" id="handlePrompt">
+                    <div style="font-size: 24pt; background-color: ffffff; width: 450; margin-bottom: 10px">
+                    <font color='55aa55'>danode</font>chess<br>
+                </div>
+                </span>
+                select a handle<br>
+                <input class="chess" style="width: 300" id="handleBox" value="handle" onkeypress="handleKeyPress(event)"><br>
+                and press enter<br><button class="prompt" style="width: 120; margin: 8px" onclick="setHandle()">okay</button>
+                </div>
+            </div>
+        </div>
+
+<script>
+function doit() {
+    var x = movegen();
+    var y = "";
+    for(var i = 0; i < x.length; i++)
+        y += " " + getAlgebra(x[i].source) + "-" + getAlgebra(x[i].dest);
+        
+    alert(y + "\n\n" + x.length);
+}
+</script>
+        <button onclick="doit();">Moves</button>
+
+    <script src="footer.js"></script>
+</body>
+</html>
